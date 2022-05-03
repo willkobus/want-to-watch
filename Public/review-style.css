@@ -1,0 +1,26 @@
+body{
+    background-image: url("http://d279m997dpfwgl.cloudfront.net/wp/2020/12/GettyImages-1150049038-1000x630.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+header{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+#outer_container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+/* #comment_container {
+    display: flex;
+    justify-content: center;
+} */

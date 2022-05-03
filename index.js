@@ -23,3 +23,7 @@ server.listen(PORT, () => {
 server.get("/", (req, res) => {
     res.render("index");
   });
+
+server.get("/review", (req, res) => {
+    res.render("review")
+})
