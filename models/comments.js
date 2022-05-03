@@ -2,19 +2,14 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-let movie = new Schema({
-  title: String,
-  movieDate: Number,
-  synopsis: String,
-  poster: String,
-  //string must be parsed as a number? maybe? 
-  likes: Number, 
-  dislikes: Number,
-  comments: [String]
+let comments = new Schema({
+  comments: [String],
+  likes: Number,
+  dislikes: Number
 });
 
-var movieSchema = mongoose.model('movie', movie );
+// var commentsSchema = mongoose.model('commentsSchema', comments );
 
-// module.exports = {
-//     movie
-// }
+module.exports = {
+    comments
+}

@@ -16,3 +16,5 @@ let movie = new Schema({
 module.exports = {
     movie
 }
+
+// module.exports = User = mongoose.model('users', userSchema);
