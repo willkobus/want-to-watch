@@ -15,18 +15,17 @@ movieRouter.post("/",async, (req,res)=>{
   
 if(title){
   const { data } = await axios.get(titleQuery)
-  const name = data.results.title;
-  const date = data.results.release_date
-  const img = data.results.backdrop_path
-  const desc = data.results.overview
+  const name = data.results[0].title;
+  const date = data.results[0].release_date
+  const img = data.results[0].backdrop_path
+  const desc = data.results[0].overview
 }
   if(genre){
     const { data } = await axios.get(genreQuery)
-    const name = data.results.title;
-    const date = data.results.release_date
-    const img = data.results.backdrop_path
-    const desc = data.results.overview
-    
+    const name = data.results[0].title;
+    const date = data.results[0].release_date
+    const img = data.results[0].backdrop_path
+    const desc = data.results[0].overview
   }
 
   res.redirect(303,"/review")
