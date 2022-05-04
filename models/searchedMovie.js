@@ -13,8 +13,9 @@ let movie = new Schema({
   comments: [String]
 });
 
-module.exports = {
-    movie
-}
+module.exports = mongoose.model('searchedMovie', movieSchema)
+// module.exports = {
+//     movie
+// }
 
 // module.exports = User = mongoose.model('users', userSchema);
