@@ -1,4 +1,4 @@
-//const {movie} = require("../Models/searchedMovie")
+const {movies} = require("./front-end-require")
 
 /* <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
@@ -10,10 +10,10 @@
 </div> */
 
 const review = {
-    title: "Finding Nemo",
-    movieDate: new Date(2006, 5, 12).toDateString(),
+    title: movies.title,
+    movieDate: new Date(movies.releaseDate).toDateString(),
     synopsis: "Scared clownfish tries to find his son",
-    poster: "https://m.media-amazon.com/images/I/51T9vLGUtyL._AC_.jpg",
+    poster: `${movie.img}`,
     likes: 7,
     dislikes: 2,
     comments: ["I thought the blue fish was dumb", "The dad really should've done a better job keeping track of his son", "A heart warming tale of a single dad trying his best"]
@@ -62,18 +62,26 @@ function createMovieCard(){
 }
 
 function createCommentCard(){
+    
     const card = document.createElement("div")
     card.classList.add("card")
     card.setAttribute("style", "width: 18rem")
+
+    const reviewTitle = document.createElement("h3")
+    reviewTitle.classList.add("card-title")
+    reviewTitle.innerText = "Reviews"
+    reviewTitle.setAttribute("style", "text-align: center")
+    card.appendChild(reviewTitle)
 
     for (let comment of review.comments){
         const userComment = document.createElement('p')
         userComment.classList.add("card-text")
         userComment.innerText = comment
         card.appendChild(userComment)
+        document.getElementById("comment_container").appendChild(card)
     }
 
-    document.getElementById("comment_container").appendChild(card)
+    
 
 }
 
