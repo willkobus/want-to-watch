@@ -13,7 +13,7 @@ const connect = async () => { await goos.connect(process.env.DB_URL, { useNewUrl
 
 const server = express();
 
-server.use(express.static("public"))
+server.use(express.static("Public"))
 server.use(express.urlencoded({extended: true}))
 server.use(express.json())
 server.use(methodOverride("_method"))
