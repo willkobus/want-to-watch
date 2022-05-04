@@ -15,25 +15,51 @@
     <title>Home Page</title>
   </head>
   <body>
-    <div id="loader"></div>
+  <div id="loader"></div>
     <div id="content">
-      <h1>Do You "REALLY" Want to Watch This?</h1>
-      <br />
-      <div class="dropdown">
-        <button
-          class="btn btn-info dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton1"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Search by Category
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">Title</a></li>
-          <li><a class="dropdown-item" href="#">Genre</a></li>
-          <li><a class="dropdown-item" href="#">Year</a></li>
-        </ul>
+    <h1>Do You "REALLY" Want to Watch This?</h1>
+    <br />
+    <div class="dropdown">
+      <button
+        class="btn btn-info dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton1"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Search by Category
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="#">Title</a></li>
+        <li><a class="dropdown-item" href="#">Genre</a></li>
+        <li><a class="dropdown-item" href="#">Year</a></li>
+      </ul>
+    </div>
+    <form action="/" method="POST">
+      <input type="text" name="title" id="" placeholder="Search By Title">
+      <input type="text" name="genre" id="" placeholder="Search By Genre">
+      <input type="submit" value="Search">
+  </form>
+    <div class="wrapper">
+      <div class="card">
+        <img
+          src="https://lumiere-a.akamaihd.net/v1/images/image_efeee89d.jpeg"
+        />
+        <div class="descriptions">
+          <h1>Taken</h1>
+          <p>
+            Bryan Mills (Liam Neeson), a former government operative, is trying
+            to reconnect with his daughter, Kim (Maggie Grace). Then his worst
+            fears become real when sex slavers abduct Kim and her friend shortly
+            after they arrive in Paris for vacation. With just four days until
+            Kim will be auctioned off, Bryan must call on every skill he learned
+            in black ops to rescue her..
+          </p>
+          <button>
+            <i class="fab fa-youtube"></i>
+            Play trailer on YouTube
+          </button>
+        </div>
       </div>
       <div class="container">
         <div class="wrapper">

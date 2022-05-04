@@ -1,36 +1,58 @@
 const express = require("express");
-
 const axios = require("axios");
-
-const { searchedMovie } = require("../Models/searchedMovie")
-
+const { movies } = require("../Models/movies")
 const movieRouter = express.Router();
+movieRouter.use(express.json());
 
-movieRouter.post("/",async, (req,res)=>{
-  const {search} = req.query;
+movieRouter.post("/", async (req,res)=>{
+  const {title, genre} = req.body;
 
-  const titleQuery = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&query=${titleSearch}`;
+  const titleQuery = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&query=${title}`;
 
-  const genreQuery = `//https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}46&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate%27&with_genres=${genreSearch}`
+  const genreQuery = `//https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}46&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate%27&with_genres=${genre}`
   
-if(title){
-  const { data } = await axios.get(titleQuery)
-  const name = data.results[0].title;
-  const date = data.results[0].release_date
-  const img = data.results[0].backdrop_path
-  const desc = data.results[0].overview
+let movie;
+  if(title){
+  const { data } = await axios.get(titleQuery).catch((error)=>{
+    console.log(error)
+  })
+  movie = { 
+    name: data.results[0].title,
+   date: data.results[0].release_date,
+   img: data.results[0].backdrop_path,
+   desc: data.results[0].overview,
+   rating: data.results[0].vote_average,
+   totalVotes: data.results[0].vote_count
+  }
 }
   if(genre){
-    const { data } = await axios.get(genreQuery)
-    const name = data.results[0].title;
-    const date = data.results[0].release_date
-    const img = data.results[0].backdrop_path
-    const desc = data.results[0].overview
+    const { data } = await axios.get(genreQuery).catch((error)=>{
+      console.log(error)
+    })
+    movie = { 
+    name: data.results[0].title,
+    date: data.results[0].release_date,
+    img: data.results[0].backdrop_path,
+    desc: data.results[0].overview,
+    rating: data.results[0].vote_average,
+    totalVotes: data.results[0].vote_count
+    }
+    
   }
+  
+ 
+    res.render("review", {movie})
+    movies.push(movie)
 
-  res.redirect(303,"/review")
+   console.log(movies);
+  // res.redirect(303,"/review")
+  
 })
 
-module.export={
+// movieRouter.get("/review", (req, res) => {
+//   res.render("review", {movies});
+// });
+
+module.exports={
 movieRouter
 }
