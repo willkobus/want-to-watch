@@ -13,9 +13,23 @@
         <h1>Movie Review Page</h1>
     </header>
     <div id="outer_container">
-    <div id="card_container"></div>    
+    <div id="card_container">
+        
+    
+            <div class="card" style="width: 18rem;">
+                <img src="https://image.tmdb.org/t/p/original<%=movie.img%>" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><%=movie.name%></h5>
+                  <p class="card-text"><%=movie.desc%></p>
+                  <p class="card-text">Average rating: <%=movie.rating%></p>
+                  <p class="card-text">Total ratings: <%=movie.totalVotes%></p>
+                  <a href="/" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+         
+    </div>    
     <div id="comment_container"></div>    
     </div>
-<script src="review.js"></script>
+<!-- <script src="review.js"></script> -->
 </body>
 </html>
