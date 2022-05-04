@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,68 +15,74 @@
     <title>Home Page</title>
   </head>
   <body>
-    <h1>Do You "REALLY" Want to Watch This?</h1>
-    <br />
-    <div class="dropdown">
-      <button
-        class="btn btn-info dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton1"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Search by Category
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" href="#">Title</a></li>
-        <li><a class="dropdown-item" href="#">Genre</a></li>
-        <li><a class="dropdown-item" href="#">Year</a></li>
-      </ul>
-    </div>
-    <div class="wrapper">
-      <div class="card">
-        <img
-          src="https://lumiere-a.akamaihd.net/v1/images/image_efeee89d.jpeg"
-        />
-        <div class="descriptions">
-          <h1>Taken</h1>
-          <p>
-            Bryan Mills (Liam Neeson), a former government operative, is trying
-            to reconnect with his daughter, Kim (Maggie Grace). Then his worst
-            fears become real when sex slavers abduct Kim and her friend shortly
-            after they arrive in Paris for vacation. With just four days until
-            Kim will be auctioned off, Bryan must call on every skill he learned
-            in black ops to rescue her..
-          </p>
-          <button>
-            <i class="fab fa-youtube"></i>
-            Play trailer on YouTube
-          </button>
+    <div id="loader"></div>
+    <div id="content">
+      <h1>Do You "REALLY" Want to Watch This?</h1>
+      <br />
+      <div class="dropdown">
+        <button
+          class="btn btn-info dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Search by Category
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Title</a></li>
+          <li><a class="dropdown-item" href="#">Genre</a></li>
+          <li><a class="dropdown-item" href="#">Year</a></li>
+        </ul>
+      </div>
+      <div class="container">
+        <div class="wrapper">
+          <div class="card">
+            <img
+              src="https://lumiere-a.akamaihd.net/v1/images/image_efeee89d.jpeg"
+            />
+            <div class="descriptions">
+              <h1>Taken</h1>
+              <p>
+                Bryan Mills (Liam Neeson), a former government operative, is
+                trying to reconnect with his daughter, Kim (Maggie Grace). Then
+                his worst fears become real when sex slavers abduct Kim and her
+                friend shortly after they arrive in Paris for vacation. With
+                just four days until Kim will be auctioned off, Bryan must call
+                on every skill he learned in black ops to rescue her..
+              </p>
+              <button>
+                <i class="fab fa-youtube"></i>
+                Play trailer on YouTube
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="https://ichef.bbci.co.uk/news/304/mcs/media/images/76618000/jpg/_76618512_76618504.jpg"
+            />
+            <div class="descriptions">
+              <h1>Ninja Turtles</h1>
+              <p>
+                In New York, mysterious radioactive ooze has mutated four sewer
+                turtles into talking, upright-walking, crime-fighting ninjas.
+                The intrepid heroes -- Michelangelo (Robbie Rist), Donatello
+                (Corey Feldman), Raphael (Josh Pais) and Leonardo (Brian Tochi)
+                -- are trained in the Ninjutsu arts by their rat sensei,
+                Splinter. When a villainous rogue ninja, who is a former pupil
+                of Splinter, arrives and spreads lawlessness throughout the
+                city, it's up to the plucky turtles to stop him.
+              </p>
+              <button>
+                <i class="fab fa-youtube"></i>
+                Play trailer on YouTube
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <img
-          src="https://ichef.bbci.co.uk/news/304/mcs/media/images/76618000/jpg/_76618512_76618504.jpg"
-        />
-        <div class="descriptions">
-          <h1>Ninja Turtles</h1>
-          <p>
-            In New York, mysterious radioactive ooze has mutated four sewer
-            turtles into talking, upright-walking, crime-fighting ninjas. The
-            intrepid heroes -- Michelangelo (Robbie Rist), Donatello (Corey
-            Feldman), Raphael (Josh Pais) and Leonardo (Brian Tochi) -- are
-            trained in the Ninjutsu arts by their rat sensei, Splinter. When a
-            villainous rogue ninja, who is a former pupil of Splinter, arrives
-            and spreads lawlessness throughout the city, it's up to the plucky
-            turtles to stop him.
-          </p>
-          <button>
-            <i class="fab fa-youtube"></i>
-            Play trailer on YouTube
-          </button>
-        </div>
-      </div>
     </div>
+    <script src="homepage.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
