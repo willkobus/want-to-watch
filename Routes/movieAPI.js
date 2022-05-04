@@ -39,11 +39,9 @@ let movie;
     }
     
   }
-  
- 
     res.render("review", {movie})
     movies.push(movie)
-
+    // return movie
    console.log(movies);
   // res.redirect(303,"/review")
   
@@ -55,4 +53,5 @@ let movie;
 
 module.exports={
 movieRouter
+// , movie
 }
