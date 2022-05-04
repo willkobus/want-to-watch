@@ -27,6 +27,8 @@ movieRouter.post("/", async (req, res) => {
       };
     } catch (error) {
       console.log(error);
+      // \hey uyou may have already added that movie
+      res.render("review", { error: "movie already exists. sorry" });
     }
   }
   if (genre) {
