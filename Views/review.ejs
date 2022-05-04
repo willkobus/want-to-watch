@@ -17,18 +17,37 @@
         
     
             <div class="card" style="width: 18rem;">
-                <img src="https://image.tmdb.org/t/p/original<%=movie.img%>" class="card-img-top" alt="...">
+                <img src="https://image.tmdb.org/t/p/original<%=movie.poster%>" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title"><%=movie.name%></h5>
-                  <p class="card-text"><%=movie.desc%></p>
+                  <h5 class="card-title"><%=movie.title%></h5>
+                  <h6>Release Date: <%=movie.movieDate%></h6>
+                  <p class="card-text"><%=movie.synopsis%></p>
                   <p class="card-text">Average rating: <%=movie.rating%></p>
                   <p class="card-text">Total ratings: <%=movie.totalVotes%></p>
                   <a href="/" class="btn btn-primary">Go somewhere</a>
                 </div>
               </div>
-         
+         <form action="/comment/<%=movie._id%>?_method=PUT" method="POST" id="comment_adder">
+            
+             <textarea name="comment" id="" cols="30" rows="10"></textarea>
+             <input type="submit" value="Submit Comment">
+         </form>
     </div>    
-    <div id="comment_container"></div>    
+    <div id="comment_container">
+        <div class="card" style="width: 18rem;">
+            <% for (let comment of movie.comments) {%> 
+                
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <p class="card-text"><%=comment%></p>
+                      <a href="/" class="btn btn-primary">Go Home</a>
+                    </div>
+                  </div>
+
+            <%}%>
+            </div>
+          </div>
+    </div>    
     </div>
 <!-- <script src="review.js"></script> -->
 </body>

@@ -48,15 +48,16 @@ movieRouter.post("/", async (req, res) => {
   }
 
   try {
-    const newMovie = new Movie({ ...movie });
-    await newMovie.save();
+    let newMovie = new Movie({ ...movie });
+    newMovie = await newMovie.save();
+    return res.render("review", { movie: newMovie });
+
   } catch (error) {
     console.log(error);
     //could use a req.send for the error
   }
 
-  return res.render("review", { movie });
-
+  
   // return movie
   //  console.log(movies);
   // res.redirect(303,"/review")
