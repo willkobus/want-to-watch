@@ -11,13 +11,23 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <title>Home Page</title>
   </head>
   <body>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="img/movieicon.png"></a>
+        </div>
+        <ul>
+            <li><a href="#review-movie">reviews</a></li>
+            <li><a href="#watch-movie">watch now</a></li>
+            <li><a href="#genre-movie">genre</a></li>
+        </ul>
+    </nav>
   <div id="loader"></div>
     <div id="content">
-    <h1>Do You "REALLY" Want to Watch This?</h1>
+    <h1 class="intro-heading">Do You "REALLY" Want to Watch This?</h1>
     <br />
     <div class="dropdown">
       <button
@@ -64,21 +74,39 @@
           </button>
         </div>
       </div>
-      <div class="container">
-        <div class="wrapper">
+      <div class="card">
+        <img
+          src="https://lumiere-a.akamaihd.net/v1/images/image_efeee89d.jpeg"
+        />
+        <div class="descriptions">
+          <h1>Taken</h1>
+          <p>
+            Bryan Mills (Liam Neeson), a former government operative, is trying
+            to reconnect with his daughter, Kim (Maggie Grace). Then his worst
+            fears become real when sex slavers abduct Kim and her friend shortly
+            after they arrive in Paris for vacation. With just four days until
+            Kim will be auctioned off, Bryan must call on every skill he learned
+            in black ops to rescue her..
+          </p>
+          <button>
+            <i class="fab fa-youtube"></i>
+            Play trailer on YouTube
+          </button>
+        </div>
+      </div>
           <div class="card">
             <img
-              src="https://lumiere-a.akamaihd.net/v1/images/image_efeee89d.jpeg"
+              src="https://cdn.shopify.com/s/files/1/0057/3728/3618/products/comingtoamerica.mp_5add5aba-12a7-4c35-849b-ca986c8970f8_480x.progressive.jpg?v=1614373403"
             />
             <div class="descriptions">
-              <h1>Taken</h1>
+              <h3>Coming To America</h3>
               <p>
-                Bryan Mills (Liam Neeson), a former government operative, is
-                trying to reconnect with his daughter, Kim (Maggie Grace). Then
-                his worst fears become real when sex slavers abduct Kim and her
-                friend shortly after they arrive in Paris for vacation. With
-                just four days until Kim will be auctioned off, Bryan must call
-                on every skill he learned in black ops to rescue her..
+                Prince Akeem  is the prince of a wealthy African country and wants for nothing, 
+                except a wife who will love him in spite of his title. To escape an arranged marriage, 
+                Akeem flees to America accompanied by his persnickety sidekick, Semmi (Arsenio Hall), 
+                to find his queen.Disguised as a foreign student working in fast food, he romances Lisa, 
+                but struggles with revealing his true identity to her and his marital intentions to his 
+                king father (James Earl Jones).
               </p>
               <button>
                 <i class="fab fa-youtube"></i>
@@ -91,12 +119,12 @@
               src="https://ichef.bbci.co.uk/news/304/mcs/media/images/76618000/jpg/_76618512_76618504.jpg"
             />
             <div class="descriptions">
-              <h1>Ninja Turtles</h1>
+              <h2>Ninja Turtles</h2>
               <p>
                 In New York, mysterious radioactive ooze has mutated four sewer
                 turtles into talking, upright-walking, crime-fighting ninjas.
-                The intrepid heroes -- Michelangelo (Robbie Rist), Donatello
-                (Corey Feldman), Raphael (Josh Pais) and Leonardo (Brian Tochi)
+                The intrepid heroes -- Michelangelo, Donatello
+                , Raphael and Leonardo 
                 -- are trained in the Ninjutsu arts by their rat sensei,
                 Splinter. When a villainous rogue ninja, who is a former pupil
                 of Splinter, arrives and spreads lawlessness throughout the
@@ -108,8 +136,6 @@
               </button>
             </div>
           </div>
-        </div>
-      </div>
     </div>
     <script src="homepage.js"></script>
     <script
