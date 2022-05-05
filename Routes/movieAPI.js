@@ -51,7 +51,7 @@ movieRouter.post("/", async (req, res) => {
     return res.render("review", { movie: newMovie });
 
   } catch (error) {
-    res.render("error-page", { error: "The Movie you are trying to create already exists. Head back to the home page to check it out or make a new one!" });
+    res.render("duplicate-error-page", { error: "The Movie you are trying to create already exists. Head back to the home page to check it out or make a new one!" });
    
   }
 
