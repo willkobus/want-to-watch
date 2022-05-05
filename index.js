@@ -44,9 +44,3 @@ connect()
 })
 .catch( (error) => {console.log(error)})
 
-
-
-
-// server.get("/review", (req, res) => {
-//     res.render("review")
-// })
