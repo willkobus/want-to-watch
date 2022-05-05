@@ -16,19 +16,17 @@ movieRouter.post("/", async (req, res) => {
     try {
       const { data } = await axios.get(titleQuery);
       movie = {
-        title: data.results[0].title,
+        title: data.results[0].title.toLowerCase(),
         movieDate: data.results[0].release_date,
         poster: data.results[0].backdrop_path,
         synopsis: data.results[0].overview,
-        //  likes: data.results[0].likes,
-        //  dislikes: data.results[0].likes,
+        
         likes: data.results[0].vote_average,
         totalVotes: data.results[0].vote_count
       };
     } catch (error) {
-      console.log(error);
       // \hey uyou may have already added that movie
-      res.render("review", { error: "movie already exists. sorry" });
+      
     }
   }
   if (genre) {
@@ -53,21 +51,14 @@ movieRouter.post("/", async (req, res) => {
     return res.render("review", { movie: newMovie });
 
   } catch (error) {
-    console.log(error);
-    //could use a req.send for the error
+    res.render("error-page", { error: "The Movie you are trying to create already exists. Head back to the home page to check it out or make a new one!" });
+   
   }
 
-  
-  // return movie
-  //  console.log(movies);
-  // res.redirect(303,"/review")
 });
 
-// movieRouter.get("/review", (req, res) => {
-//   res.render("review", {movies});
-// });
+
 
 module.exports = {
-  movieRouter,
-  // , movie
+  movieRouter
 };

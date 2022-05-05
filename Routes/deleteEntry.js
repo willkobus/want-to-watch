@@ -1,9 +1,8 @@
 const express = require("express");
-const axios = require("axios");
 const Movie = require("../Models/movie");
 const deleteRouter = express.Router();
 deleteRouter.use(express.json());
-deleteRouter.use(express.urlencoded())
+
 
 
 deleteRouter.delete("/:id", async(req, res) => {

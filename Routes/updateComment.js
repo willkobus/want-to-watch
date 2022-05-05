@@ -1,17 +1,18 @@
 const express = require("express");
 const Movie = require("../Models/movie");
-const commentRouter = express.Router();
-commentRouter.use(express.json());
+const updateCommentRouter = express.Router();
+updateCommentRouter.use(express.json());
 
 
-commentRouter.put("/:id", async(req, res) => {
+
+updateCommentRouter.put("/:id", async(req, res) => {
     const {id} = req.params
-    const {comment} = req.body
+    const {commentNumber, comment} = req.body
+    
     
     try {
         const movie = await Movie.findByIdAndUpdate(id);
-        const newComment = comment
-        movie.comments.push(newComment);
+        movie.comments.splice(commentNumber, 1, comment);
         await movie.save();
         console.log(movie)
 
@@ -19,12 +20,10 @@ commentRouter.put("/:id", async(req, res) => {
     } catch (error) {
         console.log(error)
     }
-
-
     
 
 })
 
 module.exports = {
-    commentRouter
+    updateCommentRouter
 }

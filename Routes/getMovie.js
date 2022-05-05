@@ -8,7 +8,7 @@ getMovieRouter.get("/", async (req, res) => {
     const {title} = req.query
 
     if(title){
-        const movie = await Movie.findOne({title: title})
+        const movie = await Movie.findOne({title: title.toLowerCase()})
         console.log(movie);
         res.render("review", {movie})
     }
