@@ -7,10 +7,22 @@ body{
 }
 
 header{
+    display: flex;
     text-align: center;
+    justify-content: center;
+    margin: 3%;
 }
 
 h2{
+    text-align: center;
+}
+
+.darkbg_white_text{
+    background-color: #1C2A35;
+    color: white;
+    width: fit-content;
+    border-radius: 15px;
+    padding: 5px;
     text-align: center;
 }
 
@@ -18,4 +30,27 @@ h2{
     display: flex;
     flex-flow: row;
     justify-content: center;
+}
+
+#card_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment_adder{
+    display: flex;
+    flex-direction: column;
+    padding: 10px
+}
+
+#comment_container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 3%;
+}
+
+.comment_btn{
+    margin: 10px;
+    padding: 5px
 }

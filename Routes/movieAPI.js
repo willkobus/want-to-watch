@@ -23,7 +23,7 @@ movieRouter.post("/", async (req, res) => {
         //  likes: data.results[0].likes,
         //  dislikes: data.results[0].likes,
         likes: data.results[0].vote_average,
-        //  totalVotes: data.results[0].vote_count
+        totalVotes: data.results[0].vote_count
       };
     } catch (error) {
       console.log(error);

@@ -1,18 +1,19 @@
 const express = require("express");
 const axios = require("axios");
 const Movie = require("../Models/movie");
-const commentRouter = express.Router();
-commentRouter.use(express.json());
-commentRouter.use(express.urlencoded())
+const deleteCommentRouter = express.Router();
+deleteCommentRouter.use(express.json());
+deleteCommentRouter.use(express.urlencoded())
 
-commentRouter.put("/:id", async(req, res) => {
+
+deleteCommentRouter.put("/:id", async(req, res) => {
     const {id} = req.params
-    const {comment} = req.body
+    const {commentNumber} = req.body
     
+
     try {
         const movie = await Movie.findByIdAndUpdate(id);
-        const newComment = comment
-        movie.comments.push(newComment);
+        movie.comments.splice(commentNumber - 1, 1);
         await movie.save();
         console.log(movie)
 
@@ -21,11 +22,8 @@ commentRouter.put("/:id", async(req, res) => {
         console.log(error)
     }
 
-
-    
-
 })
 
 module.exports = {
-    commentRouter
+    deleteCommentRouter
 }

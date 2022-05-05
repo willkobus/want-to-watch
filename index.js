@@ -8,6 +8,8 @@ const methodOverride = require("method-override")
 const {movieRouter} = require("./Routes/movieAPI")
 const {commentRouter} = require("./Routes/addComment")
 const {getMovieRouter} = require("./Routes/getMovie")
+const {deleteRouter} = require("./Routes/deleteEntry")
+const {deleteCommentRouter} = require("./Routes/deleteComment")
 
 const connect = async () => { await goos.connect(process.env.DB_URL, { useNewUrlParser: true })}
 
@@ -31,6 +33,8 @@ connect()
   server.use("/api", movieRouter)
   server.use("/comment", commentRouter)
   server.use("/getMovie", getMovieRouter)
+  server.use("/delete", deleteRouter)
+  server.use("/deleteComment", deleteCommentRouter)
 
   server.get("/", (req, res) => {
       res.render("index");
