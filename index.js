@@ -10,6 +10,7 @@ const {commentRouter} = require("./Routes/addComment")
 const {getMovieRouter} = require("./Routes/getMovie")
 const {deleteRouter} = require("./Routes/deleteEntry")
 const {deleteCommentRouter} = require("./Routes/deleteComment")
+const {updateCommentRouter} = require("./Routes/updateComment")
 
 const connect = async () => { await goos.connect(process.env.DB_URL, { useNewUrlParser: true })}
 
@@ -35,6 +36,7 @@ connect()
   server.use("/getMovie", getMovieRouter)
   server.use("/delete", deleteRouter)
   server.use("/deleteComment", deleteCommentRouter)
+  server.use("/updateComment", updateCommentRouter)
 
   server.get("/", (req, res) => {
       res.render("index");

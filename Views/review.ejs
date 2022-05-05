@@ -11,13 +11,15 @@
 </head>
 <body>
     <header>
-        <h1 class="darkbg_white_text">Movie Review Page</h1>
+        <h1 class="darkbg_white_text"><%=movie.title.toUpperCase()%> Review Page</h1>
+    </header>
+    <header>
+    </div>
     </header>
     <div id="outer_container">
     <div id="card_container">
-        
         <h3 class="darkbg_white_text">Movie Details</h3>
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 40rem;" id="movie_card">
                 <img src="https://image.tmdb.org/t/p/original<%=movie.poster%>" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title"><%=movie.title%></h5>
@@ -27,35 +29,45 @@
                   <p class="card-text">Total ratings: <%=movie.totalVotes%></p>
                   <a href="/" class="btn btn-primary">Go Home</a>
                 </div>
+                
+                 <form action="/comment/<%=movie._id%>?_method=PUT" method="POST" class="comment_adder">
+                    <h3 class="darkbg_white_text">Custom Review</h3> 
+                    <textarea name="comment" id="" cols="30" rows="5" required="true" placeholder="Enter Review Here and then hit submit"></textarea>
+                     <input type="submit" value="Submit Review" class="comment_btn btn btn-success">
+                <form action="/delete/<%=movie._id%>?_method=DELETE" method="POST" class="comment_adder">
+                    <h3 class="darkbg_white_text">Delete Review</h3> 
+                    <input type="submit" value="Delete Movie" class="comment_btn btn btn-danger">
+                 </form>
               </div>
-         <form action="/comment/<%=movie._id%>?_method=PUT" method="POST" class="comment_adder">
-            <h3 class="darkbg_white_text">Custom Review</h3> 
-            <textarea name="comment" id="" cols="30" rows="10" required="true" placeholder="Enter Review Here and then hit submit"></textarea>
-             <input type="submit" value="Submit Comment" class="comment_btn">
+         
          </form>
-         <form action="/deleteComment/<%=movie._id%>?_method=PUT" method="POST" class="comment_adder">
-            <h3 class="darkbg_white_text">Delete Comment</h3> 
-            <input type="text" name="comment_number" class="comment_adder">
-             <input type="submit" value="Submit Comment" class="comment_btn">
-         </form>
-         <form action="/delete/<%=movie._id%>?_method=DELETE" method="POST" class="comment_adder">
-            <h3 class="darkbg_white_text">Delete Review</h3> 
-             <input type="submit" value="Delete" class="comment_btn">
-         </form>
+         
+         
 
     </div>    
     <div id="comment_container">
         <h3 class="darkbg_white_text">Reviews</h3>
         <% for (let i = 0; i < movie.comments.length; i++) {%> 
-        <div class="card" style="width: 18rem;">
+        <div class="card" id="review_card">
        
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                      <p class="card-text">Comment <%=i+1%>:</p>
-                        <p class="card-text"><%=movie.comments[i]%></p>
-                      
-                    </div>
-                  </div>
+            <div class="card-body" >
+                <p class="card-text"><%=movie.comments[i]%></p>
+
+                <form action="/updateComment/<%=movie._id%>?_method=PUT" method="POST" class="comment_adder">
+                    <h5 class="darkbg_white_text">Update/Delete Comment</h5>
+                    <input type="hidden" name="commentNumber" id="" value="<%=i%>">
+                    <textarea name="comment" id="" cols="30" rows="3" required="true" placeholder="Use this area to update your review or hit the delete button to get rid of it!" ></textarea>
+                    <input type="submit" value="Update Review" class="comment_btn btn btn-warning">
+                    
+                </form>
+                <form action="/deleteComment/<%=movie._id%>?_method=PUT" method="POST" class="comment_adder">
+                    <input type="hidden" name="commentNumber" id="" value="<%=i%>">
+                    <input type="submit" value="Delete Review" class="comment_btn btn btn-danger">
+                </form>
+                
+            </div>
+            </div>
+                  
 
             <%}%>
             </div>

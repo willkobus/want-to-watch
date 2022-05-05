@@ -9,8 +9,10 @@ body{
 header{
     display: flex;
     text-align: center;
+    flex-direction: row;
     justify-content: center;
-    margin: 3%;
+    margin-top: 1%;
+    margin-bottom: 2%;
 }
 
 h2{
@@ -28,7 +30,7 @@ h2{
 
 #outer_container {
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     justify-content: center;
 }
 
@@ -46,8 +48,18 @@ h2{
 
 #comment_container{
     display: flex;
-    flex-direction: column;
-    margin-left: 3%;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#movie_card{
+    margin: 1%
+}
+#review_card{
+    margin: 1%;
+    height: fit-content;
+    width: 34rem;
 }
 
 .comment_btn{
