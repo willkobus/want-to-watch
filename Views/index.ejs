@@ -17,7 +17,7 @@
   <body>
     <nav>
         <div class="logo">
-            <a href="index.html"><img src="img/movieicon.png"></a>
+            <a href="index.html"><img src="img/movieB.png"></a>
         </div>
         <ul>
             <li><a href="#review-movie">reviews</a></li>
@@ -27,24 +27,8 @@
     </nav>
   <div id="loader"></div>
     <div id="content">
-    <h1 class="intro-heading">Do You "REALLY" Want to Watch This?</h1>
+    <h1 class="intro-heading" id="red">Do You "REALLY" Want to Watch This?</h1>
     <br />
-    <div class="dropdown">
-      <button
-        class="btn btn-info dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton1"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Search by Category
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" href="#">Title</a></li>
-        <li><a class="dropdown-item" href="#">Genre</a></li>
-        <li><a class="dropdown-item" href="#">Year</a></li>
-      </ul>
-    </div>
     <form action="/api" method="POST">
       <input type="text" name="title" id="" placeholder="Create By Title">
       <input type="submit" value="Create Review">
@@ -56,30 +40,32 @@
     <div class="wrapper">
       <div class="card">
         <img
-          src="https://lumiere-a.akamaihd.net/v1/images/image_efeee89d.jpeg"
+          src="https://i.etsystatic.com/13513569/r/il/879723/1116897704/il_570xN.1116897704_4zna.jpg"
         />
         <div class="descriptions">
-          <h1>Taken</h1>
+          <h2>Jaws</h2>
           <p>
-            Bryan Mills (Liam Neeson), a former government operative, is trying
-            to reconnect with his daughter, Kim (Maggie Grace). Then his worst
-            fears become real when sex slavers abduct Kim and her friend shortly
-            after they arrive in Paris for vacation. With just four days until
-            Kim will be auctioned off, Bryan must call on every skill he learned
-            in black ops to rescue her..
+            When a young woman is killed by a shark while skinny-dipping near 
+            the New England tourist town of Amity Island, police chief Martin Brody
+             wants to close the beaches, but mayor Larry Vaughn (Murray Hamilton) overrules 
+             him, fearing that the loss of tourist revenue will cripple the town. Ichthyologist
+              Matt Hooper (Richard Dreyfuss) and grizzled ship captain Quint (Robert Shaw) 
+              offer to help Brody capture the killer beast, and the trio engage in an epic 
+              battle of man vs. nature.
           </p>
-          <button>
+          <button data-bs-toggle="modal" data-bs-target="#exampleModal" data-url="//www.youtube.com/embed/4pxkU9GVAoA">
             <i class="fab fa-youtube"></i>
             Play trailer on YouTube
           </button>
+          <a class="btn btn-primary" href="/getMovie?title=jaws">Review</a>
         </div>
       </div>
       <div class="card">
         <img
-          src="https://lumiere-a.akamaihd.net/v1/images/image_efeee89d.jpeg"
+          src="https://flxt.tmsimg.com/assets/p10988874_p_v8_bn.jpg"
         />
         <div class="descriptions">
-          <h1>Taken</h1>
+          <h2>Taken 3</h2>
           <p>
             Bryan Mills (Liam Neeson), a former government operative, is trying
             to reconnect with his daughter, Kim (Maggie Grace). Then his worst
@@ -88,10 +74,11 @@
             Kim will be auctioned off, Bryan must call on every skill he learned
             in black ops to rescue her..
           </p>
-          <button>
+          <button data-bs-toggle="modal" data-bs-target="#exampleModal" data-url="//www.youtube.com/embed/JuU0M2xBasc">
             <i class="fab fa-youtube"></i>
             Play trailer on YouTube
           </button>
+          <a class="btn btn-primary" href="/getMovie?title=taken 3">Review</a>
         </div>
       </div>
           <div class="card">
@@ -108,10 +95,11 @@
                 but struggles with revealing his true identity to her and his marital intentions to his 
                 king father (James Earl Jones).
               </p>
-              <button>
+              <button data-bs-toggle="modal" data-bs-target="#exampleModal" data-url="//www.youtube.com/embed/KFroCRDXw5E">
                 <i class="fab fa-youtube"></i>
                 Play trailer on YouTube
               </button>
+              <a class="btn btn-primary" href="/getMovie?title=coming to america">Review</a>
             </div>
           </div>
           <div class="card">
@@ -130,18 +118,143 @@
                 of Splinter, arrives and spreads lawlessness throughout the
                 city, it's up to the plucky turtles to stop him.
               </p>
-              <button>
+              <button  data-bs-toggle="modal" data-bs-target="#exampleModal" data-url="//www.youtube.com/embed/AR_ZN52J2ls">
                 <i class="fab fa-youtube"></i>
                 Play trailer on YouTube
               </button>
+              <a class="btn btn-primary" href="/getMovie?title=ninjaturtles">Review</a>
             </div>
           </div>
+          <div class="card">
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BYWMwMzQxZjQtODM1YS00YmFiLTk1YjQtNzNiYWY1MDE4NTdiXkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_.jpg"
+            />
+            <div class="descriptions">
+              <h2>Black Hawk Down</h2>
+              <p>
+                The story of 160 elite U.S. soldiers who dropped into Mogadishu 
+                in October 1993 to capture two top lieutenants of a renegade 
+                warlord, but found themselves in a desperate battle with a large 
+                force of heavily-armed Somalis.
+              </p>
+              <button data-bs-toggle="modal" data-bs-target="#exampleModal" data-url="//www.youtube.com/embed/2GfBkC3qs78">
+                <i class="fab fa-youtube"></i>
+                Play trailer on YouTube
+              </button>
+              <a class="btn btn-primary" href="/getMovie?title=black hawk down">Review</a>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="https://m.media-amazon.com/images/I/81ziuUfNC9L._AC_SY679_.jpg"
+            />
+            <div class="descriptions">
+              <h2>The Incredibles</h2>
+              <p>
+                In this lauded Pixar animated film, married superheroes 
+                Mr. Incredible and Elastigirl  
+                are forced to assume mundane lives as Bob and Helen Parr after all 
+                super-powered activities have been banned by the government. 
+                While Mr. Incredible loves his wife and kids, he longs to return 
+                to a life of adventure, and he gets a chance when summoned to an 
+                island to battle an out-of-control robot. Soon, Mr. Incredible is 
+                in trouble, and it's up to his family to save him.
+              </p>
+              <button data-bs-toggle="modal" data-bs-target="#exampleModal" data-url="//www.youtube.com/embed/-UaGUdNJdRQ">
+                <i class="fab fa-youtube"></i>
+                Play trailer on YouTube
+              </button>
+              <a class="btn btn-primary" href="/getMovie?title=the incredibles">Review</a>
+            </div>
+          </div>
+              <div class="card">
+                <img
+                  src="https://www.readingcinemasusblog.com/wp-content/uploads/sites/14/2021/01/the-dark-knight-poster.jpg"
+                />
+                <div class="descriptions">
+                  <h3>The Dark Knight</h3>
+                  <p>
+                    With the help of allies Lt. Jim Gordon and DA Harvey Dent, Batman 
+                     has been able to keep a tight lid on crime in Gotham City. But 
+                     when a vile young criminal calling himself the Joker  suddenly
+                      throws the town into chaos, the caped Crusader begins to tread 
+                      a fine line between heroism and vigilantism.
+                  </p>
+                  <button data-bs-toggle="modal" data-bs-target="#exampleModal" data-url="//www.youtube.com/embed/EXeTwQWrcwY">
+                    <i class="fab fa-youtube"></i>
+                    Play trailer on YouTube
+                  </button>
+                  <a class="btn btn-primary" href="/getMovie?title=the dark knight">Review</a>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://i.pinimg.com/originals/8a/50/82/8a5082e4da061a777a32c9ffaa6d542a.jpg"
+                />
+                <div class="descriptions">
+                  <h3>Pulp Fiction</h3>
+                  <p>
+                    Vincent Vega and Jules Winnfield  are hitmen with a penchan
+                     for philosophical discussions. In this ultra-hip, multi-strand 
+                     crime movie, their storyline is interwoven with those of their 
+                     boss, gangster Marsellus Wallace (Ving Rhames) ; his actress wife, 
+                     Mia (Uma Thurman) ; struggling boxer Butch Coolidge (Bruce Willis)
+                      ; master fixer Winston Wolfe (Harvey Keitel) and a nervous pair of 
+                      armed robbers,
+                  </p>
+                  <button data-bs-toggle="modal" data-bs-target="#exampleModal" data-url="//www.youtube.com/embed/s7EdQ4FqbhY">
+                    <i class="fab fa-youtube"></i>
+                    Play trailer on YouTube
+                  </button>
+                  <a class="btn btn-primary" href="/getMovie?title=pulp fiction">Review</a>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://m.media-amazon.com/images/I/61stp43AX+L._AC_SY741_.jpg"
+                />
+                <div class="descriptions">
+                  <h2>The Hangover</h2>
+                  <p>
+                    Two days before his wedding, Doug  and three friends,
+                 drive to Las Vegas for a wild and memorable stag party. 
+                 In fact, when the three groomsmen wake up the next morning,
+                  they can't remember a thing; nor can they find Doug. 
+                  With little time to spare, the three hazy pals try to re-trace 
+                  their steps and find Doug so they can get him back to Los Angeles 
+                  in time to walk down the aisle.
+                  </p>
+                  <button  data-bs-toggle="modal" data-bs-target="#exampleModal" data-url="//www.youtube.com/embed/tcdUhdOlz9M">
+                    <i class="fab fa-youtube"></i>
+                    Play trailer on YouTube
+                  </button>
+                  <a class="btn btn-primary" href="/getMovie?title=the hangover">Review</a>
+                </div>
+              </div>
     </div>
-    <script src="homepage.js"></script>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Movie</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <iframe id="cartoonVideo" class="embed-responsive-item" width="100%" height="315" src="//www.youtube.com/embed/YE7VzlLtp-4" allowfullscreen></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script src="homepage.js"></script>
   </body>
 </html>
