@@ -9,7 +9,11 @@ body{
     
 }
 
-h1, h2, h3 {
+h1 {
+    text-align: center;
+    text-shadow: 2px 2px #d4250e;
+} 
+h2, h3 {
     text-align: center;
     text-shadow: 2px 2px #ff3300;
 }
@@ -24,16 +28,17 @@ h1, h2, h3 {
     margin-right: auto;
   }
 .wrapper{
-    position: absolute;
+    /* position: absolute; */
     top:60%;
     left:50%;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     width:100%;
     max-width: 1000px;
     height:auto;
     display: flex;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     justify-content: space-between;
+    margin: 0 auto;
     
 }
 .card{
@@ -48,8 +53,8 @@ h1, h2, h3 {
     transition: all .5s cubic-bezier(.8,.5,.2,1.4);
     overflow: hidden;
     position: relative;
-    width: 25%;
-    margin: .5em;
+    width: 22%;
+    margin-bottom: 1rem;
 }
 .card img{
     width: 100%;
@@ -146,8 +151,8 @@ nav .logo {
 
 .logo img{
     border-radius: 5px;
-    width: 120px;
-    height: 30px;
+    width: 49px;
+    height: 40px;
 }
 
 nav ul {
@@ -179,6 +184,19 @@ nav ul li:hover {
 nav ul li:nth-child(5) {
     background-color: crimson;
 }
+ /* Banner */
+
+  
+  
+  .intro-heading {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 50px;
+  }
+  
+  
 
 
 
