@@ -6,11 +6,16 @@ body{
     width:100%;
     height:100vh;
     font-family: 'Lato';
+    
 }
 
-h1 {
+h1, h2, h3 {
     text-align: center;
     text-shadow: 2px 2px #ff3300;
+}
+.intro-heading {
+    margin-top: 3rem;
+
 }
 
 .button {
@@ -20,15 +25,16 @@ h1 {
   }
 .wrapper{
     position: absolute;
-    top:50%;
+    top:60%;
     left:50%;
     transform: translate(-50%, -50%);
     width:100%;
-    max-width: 650px;
+    max-width: 1000px;
     height:auto;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-between;
+    
 }
 .card{
     flex: 1;
@@ -42,6 +48,8 @@ h1 {
     transition: all .5s cubic-bezier(.8,.5,.2,1.4);
     overflow: hidden;
     position: relative;
+    width: 25%;
+    margin: .5em;
 }
 .card img{
     width: 100%;
@@ -112,5 +120,65 @@ h1 {
     background: rgba(197, 39, 39, 0.918) url('countdown.gif') no-repeat center center;
     background-size: cover;
 }
+
+/* navbar */
+
+nav {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+}
+
+nav .logo {
+    float: left;
+    font-size: 17px;
+    color: white;
+    padding: 15px;
+    margin-left: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 5px;
+
+}
+
+.logo img{
+    border-radius: 5px;
+    width: 120px;
+    height: 30px;
+}
+
+nav ul {
+    float: right;
+    list-style: none;
+    margin-right: 30px;
+}
+
+nav ul li {
+    display: inline-flex;
+    margin: 0 5px;
+    font-size: 15px;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 6px;
+    text-align: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+}
+
+nav ul li:hover {
+    background-color: crimson;
+}
+
+nav ul li:nth-child(5) {
+    background-color: crimson;
+}
+
 
 
