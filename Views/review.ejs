@@ -11,18 +11,18 @@
 </head>
 <body>
     <header>
-        <h1 class="darkbg_white_text"><%=movie.title.toUpperCase()%> Review Page</h1>
+        <h1 class="darkbg_white_text"><%=movie.title.replace(/\w/, c => c.toUpperCase())%> Review Page</h1>
     </header>
     <header>
     </div>
     </header>
     <div id="outer_container">
     <div id="card_container">
-        <h3 class="darkbg_white_text">Movie Details</h3>
+        <h3 class="darkbg_white_text"><%=movie.title.replace(/\w/, c => c.toUpperCase())%> Details</h3>
             <div class="card" style="width: 40rem;" id="movie_card">
                 <img src="https://image.tmdb.org/t/p/original<%=movie.poster%>" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title"><%=movie.title%></h5>
+                  <h5 class="card-title"><%=movie.title.replace(/\w/, c => c.toUpperCase())%></h5>
                   <h6>Release Date: <%=movie.movieDate%></h6>
                   <p class="card-text"><%=movie.synopsis%></p>
                   <p class="card-text">Average rating: <%=movie.likes%></p>
@@ -31,22 +31,24 @@
                 </div>
                 
                  <form action="/comment/<%=movie._id%>?_method=PUT" method="POST" class="comment_adder">
-                    <h3 class="darkbg_white_text">Custom Review</h3> 
+                    <h3 class="darkbg_white_text">Want to review <%=movie.title.replace(/\w/, c => c.toUpperCase())%>?</h3> 
                     <textarea name="comment" id="" cols="30" rows="5" required="true" placeholder="Enter Review Here and then hit submit"></textarea>
                      <input type="submit" value="Submit Review" class="comment_btn btn btn-success">
-                <form action="/delete/<%=movie._id%>?_method=DELETE" method="POST" class="comment_adder">
-                    <h3 class="darkbg_white_text">Delete Review</h3> 
-                    <input type="submit" value="Delete Movie" class="comment_btn btn btn-danger">
-                 </form>
-              </div>
+                </form>
+                     
+                     <form action="/delete/<%=movie._id%>?_method=DELETE" method="POST" class="comment_adder">
+                        <h3 class="darkbg_white_text">Delete <%=movie.title.replace(/\w/, c => c.toUpperCase())%> Review</h3> 
+                        <input type="submit" value="Delete Movie" class="comment_btn btn btn-danger">
+                     </form>
+                </div>
          
-         </form>
+         
          
          
 
     </div>    
     <div id="comment_container">
-        <h3 class="darkbg_white_text">Reviews</h3>
+        <h3 class="darkbg_white_text"><%=movie.title.replace(/\w/, c => c.toUpperCase())%> Reviews</h3>
         <% for (let i = 0; i < movie.comments.length; i++) {%> 
         <div class="card" id="review_card">
        
