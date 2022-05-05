@@ -10,7 +10,7 @@ let movieSchema = new Schema({
   poster: String,
   //string must be parsed as a number? maybe?
   likes: Number,
-  // dislikes: Number,
+  totalVotes: Number,
   comments: [String],
 });
 

@@ -11,12 +11,12 @@
 </head>
 <body>
     <header>
-        <h1>Movie Review Page</h1>
+        <h1 class="darkbg_white_text">Movie Review Page</h1>
     </header>
     <div id="outer_container">
     <div id="card_container">
         
-    
+        <h3 class="darkbg_white_text">Movie Details</h3>
             <div class="card" style="width: 18rem;">
                 <img src="https://image.tmdb.org/t/p/original<%=movie.poster%>" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -28,19 +28,31 @@
                   <a href="/" class="btn btn-primary">Go Home</a>
                 </div>
               </div>
-         <form action="/comment/<%=movie._id%>?_method=PUT" method="POST" id="comment_adder">
-            
-             <textarea name="comment" id="" cols="30" rows="10"></textarea>
-             <input type="submit" value="Submit Comment">
+         <form action="/comment/<%=movie._id%>?_method=PUT" method="POST" class="comment_adder">
+            <h3 class="darkbg_white_text">Custom Review</h3> 
+            <textarea name="comment" id="" cols="30" rows="10" required="true" placeholder="Enter Review Here and then hit submit"></textarea>
+             <input type="submit" value="Submit Comment" class="comment_btn">
          </form>
+         <form action="/deleteComment/<%=movie._id%>?_method=PUT" method="POST" class="comment_adder">
+            <h3 class="darkbg_white_text">Delete Comment</h3> 
+            <input type="text" name="comment_number" class="comment_adder">
+             <input type="submit" value="Submit Comment" class="comment_btn">
+         </form>
+         <form action="/delete/<%=movie._id%>?_method=DELETE" method="POST" class="comment_adder">
+            <h3 class="darkbg_white_text">Delete Review</h3> 
+             <input type="submit" value="Delete" class="comment_btn">
+         </form>
+
     </div>    
     <div id="comment_container">
-        <% for (let comment of movie.comments) {%> 
+        <h3 class="darkbg_white_text">Reviews</h3>
+        <% for (let i = 0; i < movie.comments.length; i++) {%> 
         <div class="card" style="width: 18rem;">
        
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                      <p class="card-text"><%=comment%></p>
+                      <p class="card-text">Comment <%=i+1%>:</p>
+                        <p class="card-text"><%=movie.comments[i]%></p>
                       
                     </div>
                   </div>
