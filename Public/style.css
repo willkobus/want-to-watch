@@ -17,10 +17,18 @@ h2, h3 {
     text-align: center;
     text-shadow: 2px 2px #ff3300;
 }
+
 .intro-heading {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 50px;
     margin-top: 3rem;
 
-}
+  }
+
+  
 
 .button {
     display: block;
@@ -184,17 +192,29 @@ nav ul li:hover {
 nav ul li:nth-child(5) {
     background-color: crimson;
 }
- /* Banner */
+ /*media queries*/
 
-  
-  
-  .intro-heading {
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 50px;
-  }
+ @media only screen and (max-width: 620px) {
+    .intro-heading {
+        font-size: 25px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .wrapper {
+        justify-content: center;
+        
+    }
+    form {
+        display: flex;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: center;
+    margin-bottom: 1rem;
+    }
+}
   
   
 
